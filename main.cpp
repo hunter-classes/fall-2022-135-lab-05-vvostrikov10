@@ -9,5 +9,8 @@ int main()
   std::cout << isPrime(43) << std::endl;
   std::cout << nextPrime(17) << std::endl;
   std::cout << countPrimes(17, 50) << std::endl;
+  std::cout << isTwinPrime(17) << std::endl;
+  std::cout << nextTwinPrime(15) << std::endl;
+  std::cout << countPrimes(17, 50) << std::endl;
   return 0;
 }

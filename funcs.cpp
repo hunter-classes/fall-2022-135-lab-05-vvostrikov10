@@ -10,6 +10,9 @@ bool isDivisibleBy(int n, int d){
 bool isPrime(int n){
     int upper = sqrt(n);
     int c = 2;
+    if (n < 2){
+        return false;
+    }
     while (c <= upper){
         if (isDivisibleBy(n, c)){
             return false;
@@ -34,6 +37,28 @@ int countPrimes(int a, int b){
         a++;
     }
     return c;
+}
+
+bool isTwinPrime(int n){
+    return (isPrime(n))&&(isPrime(n + 2) || isPrime(n-2));
+}
+
+int nextTwinPrime(int n){
+    do {
+        n++;
+    } while (!(isTwinPrime(n)));
+    return n;
+}
+
+int largestTwinPrime(int a, int b){
+    int ans = -1;
+    while(a <= b){
+        if (isTwinPrime(a)){
+            ans = a;
+        }
+        a++;
+    }
+    return ans;
 }
 
 
