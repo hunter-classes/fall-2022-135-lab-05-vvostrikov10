@@ -45,6 +45,23 @@ TEST_CASE("<isTwinPrime tests>"){
     CHECK(isTwinPrime(17) == true);
     CHECK(isTwinPrime(19) == true);
     CHECK(isTwinPrime(-17) == false);
-    CHECK(isTwinPrime(17) == true);
     CHECK(isTwinPrime(461) == true);
+}
+
+TEST_CASE("<nextTwinPrime tests>"){
+    CHECK(nextTwinPrime(23) == 29);
+    CHECK(nextTwinPrime(462) == 463);
+    CHECK(nextTwinPrime(17) == 19);
+    CHECK(nextTwinPrime(19) == 29);
+    CHECK(nextTwinPrime(-17) == 3);
+    CHECK(nextTwinPrime(461) == 463);
+}
+
+TEST_CASE("<largestTwinPrime tests>"){
+    CHECK(largestTwinPrime(17, 19) == 19);
+    CHECK(largestTwinPrime(0, 25) == 19);
+    CHECK(largestTwinPrime(19, 19) == 19);
+    CHECK(largestTwinPrime(20, 21) == -1);
+    CHECK(largestTwinPrime(19, 17) == -1);
+    CHECK(largestTwinPrime(-6, 480) == 463);
 }
